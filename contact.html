@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact E-Commerce</title>
+    </head>
+    <body>
+        <h1>Contact Us</h1>
+        <p>If you have any questions, feel free to reach out!</p>
+    <ul>
+        <li>Email: support@miniecom.com</li>
+        <li>Phone: +91 9002456781</li>
+        <li>Address: 123 Shopping Street, Chennai, India</li>
+    </ul>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Message:</label><br>
+        <textarea name="message" rows="5" required></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+    </form>
+    <a href="/">Back to Home</a>
+
+    </body>
+</html>

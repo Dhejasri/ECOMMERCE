@@ -1,0 +1,27 @@
+<h1>{{ product.name }} - Gallery</h1>
+
+{% if images %}
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        {% for img in images %}
+            <div style="border: 1px solid #ccc; padding: 10px; text-align: center;">
+                <img src="{{ img.image.url }}" width="200"><br>
+
+                <a href="{% url 'add_cart' product.id %}" 
+                   style="display:inline-block; margin-top:10px; padding:5px 10px;background-color: lightgreen; color:black; text-decoration:none; border-radius:5px;">
+                    🛒 Add to Cart
+                </a>
+
+                
+                <a href="{% url 'add_fav' product.id %}" 
+                   style="display:inline-block; margin-top:10px; padding:5px 10px;background-color: lightcoral; color:black; text-decoration:none; border-radius:5px;">
+                   ❤️ Favourite
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No images available.</p>
+{% endif %}
+
+<br>
+<a href="{% url 'product_detail' product.id %}">Back to Product</a>
